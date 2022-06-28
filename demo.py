@@ -8,8 +8,8 @@ import matplotlib.pyplot as plt
 X1 = iv.mpf([1,1.1])
 X2 = iv.mpf([0,0])
 U = iv.mpf([0,0])
-dt = 0.001
-steps = 1000
+dt = 0.01
+steps = 10
 w  = 5
 
 X1_hist, X2_hist = [X1], [X2]
@@ -25,7 +25,7 @@ for i in range(steps):
     print(X2)
 y_mins = [float(x.a) for x in X1_hist]
 y_maxs = [float(x.b) for x in X1_hist]
-time = np.linspace(0, dt*len(X1_hist), len(X1_hist))
+time = np.linspace(0, dt*(len(X1_hist)-1), len(X1_hist))
 
 plt.plot(time, y_mins, color="blue")
 plt.plot(time, y_maxs, color="blue")
